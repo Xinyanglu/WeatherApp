@@ -1,5 +1,5 @@
 import React from 'react'
-import './WeatherCard.css'
+import './DailyWeatherCard.css'
 
 function WeatherCard(props){
     let icon = props.icon? `http://openweathermap.org/img/wn/${props.icon}@2x.png`:null
