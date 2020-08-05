@@ -1,0 +1,22 @@
+.weather-card{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.temperature{
+    margin: 10px;
+}
+
+p{
+    font-size: 18px;
+}
+
+.today > .weather-card{
+    border: green;
+    border-style: solid;
+    border-radius: 8%;
+}
+
+.day-of-week{
+    color: blue;
+}
