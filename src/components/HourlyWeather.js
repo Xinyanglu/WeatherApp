@@ -13,12 +13,26 @@ class HourlyWeather extends React.Component{
                 />
             )
         }
-        
+    }
+
+    numberToMonth(n){
+        let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July','August','September','October','November','December']
+        return (months[n])
     }
 
     listOfHours(){
+        let today = new Date()
+        let tomorrow = new Date()
+        tomorrow.setDate(today.getDate()+1)
+
         let hourData = []
         for (let i=0;i<12;i++){
+            if (today.getHours() + i === 24){
+                hourData.push(
+                    <div className="h3">{this.numberToMonth(tomorrow.getMonth()) + " " + tomorrow.getDate()}</div>
+                    
+                    )
+            }
             hourData.push(this.renderHourlyWeatherCard(i))
         }
         return hourData
@@ -27,8 +41,14 @@ class HourlyWeather extends React.Component{
 
     render(){
         return(
-            <div className='hourly-weather'>
-                {this.listOfHours()}
+            <div>
+                <div className="h3">
+                    {this.numberToMonth(new Date().getMonth()) + " " + new Date().getDate()}
+                </div>
+
+                <div className='hourly-weather'>
+                    {this.listOfHours()}
+                </div>
             </div>
         )
     }

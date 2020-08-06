@@ -11,7 +11,6 @@ class DailyWeather extends React.Component{
             daysAfter = {dayNumber}
             date = {date}
             icon = {this.props.weather.daily[dayNumber].weather[0].icon}
-            dayOfWeek={date.getDay()+dayNumber} 
             morningTemperature={Math.round(this.props.weather.daily[dayNumber].temp.morn)}
             dayTemperature={Math.round(this.props.weather.daily[dayNumber].temp.day)}
             eveningTemperature={Math.round(this.props.weather.daily[dayNumber].temp.eve)}
@@ -25,25 +24,25 @@ class DailyWeather extends React.Component{
             <div className="container-fluid">
                 <div className="row">
 
-                    <div className="col-sm">
+                    <div className="col-lg">
                         <div className="today">
                             {this.renderWeatherCard(0)}
                         </div>
                     </div>
                     
-                    <div className="col-sm">
+                    <div className="col-lg">
                         {this.renderWeatherCard(1)}
                     </div>
                     
-                    <div className="col-sm">
+                    <div className="col-lg">
                         {this.renderWeatherCard(2)}
                     </div>
 
-                    <div className="col-sm">
+                    <div className="col-lg">
                         {this.renderWeatherCard(3)}
                     </div>
 
-                    <div className="col-sm">
+                    <div className="col-lg">
                         {this.renderWeatherCard(4)}
                     </div>
                 </div>

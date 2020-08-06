@@ -1,12 +1,12 @@
 import React from 'react'
 import {Nav, Navbar} from 'react-bootstrap'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function NavigationBar(){
     return(
         <div>
             <Navbar bg="primary" variant="dark">
-                <Navbar.Brand>Weather app</Navbar.Brand>
+                <Navbar.Brand href="/">Weather app</Navbar.Brand>
                 <Nav className="mr-auto">
                     <Nav.Link href="daily">Daily</Nav.Link>
                     <Nav.Link href="hourly">Hourly</Nav.Link>

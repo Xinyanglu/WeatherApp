@@ -11,8 +11,8 @@ function WeatherCard(props){
 
     return (
         <div className="weather-card">
-            <h1 className="date">{props.date? `${numberToMonth(props.date.getMonth())} ${props.date.getDate()}`:null}</h1>
-            <h3 className="day-of-week">{numberToDayOfWeek(props.dayOfWeek)}</h3>
+            <h1 className="date">{`${numberToMonth(date.getMonth())} ${date.getDate()}`}</h1>
+            <h3 className="day-of-week">{numberToDayOfWeek(date.getDay())}</h3>
             <p className="temperature">Morning: {props.morningTemperature} °C</p>
             <p className="temperature">Day: {props.dayTemperature} °C</p>
             <p className="temperature">Evening: {props.eveningTemperature} °C</p>
@@ -24,8 +24,8 @@ function WeatherCard(props){
 }
 
 function numberToDayOfWeek(n){
-    let days = ['Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-    return (days[n-1])
+    let days = ['Sunday','Monday', 'Tuesday','Wednesday','Thursday','Friday','Saturday']
+    return (days[n])
 }
 
 function numberToMonth(n){

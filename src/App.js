@@ -3,7 +3,8 @@ import DailyWeather from './components/DailyWeather'
 import NavigationBar from './components/NavigationBar'
 import axios from 'axios'
 import HourlyWeather from './components/HourlyWeather'
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+import HomePage from './components/HomePage'
 
 
 class App extends React.Component{
@@ -51,15 +52,16 @@ class App extends React.Component{
                             <NavigationBar/>
                             <HourlyWeather weather={this.state.weather}/>
                         </Route>
+
+                        <Route path="/">
+                            <HomePage />
+                        </Route>
                         
                     </Switch>
                 </Router>
             )
-        }else{
-            return ( 
-                <NavigationBar />
-            )
         }
+        return null
     }
 }
 
