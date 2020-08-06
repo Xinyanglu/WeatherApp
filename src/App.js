@@ -2,6 +2,8 @@ import React from 'react'
 import DailyWeather from './components/DailyWeather'
 import NavigationBar from './components/NavigationBar'
 import axios from 'axios'
+import HourlyWeather from './components/HourlyWeather'
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 
 class App extends React.Component{
@@ -36,13 +38,28 @@ class App extends React.Component{
 
     render(){
         console.log(this.state.weather)
-        return(
+        if (this.state.weather){
+            return(
+                <Router>
+                    <Switch>
+                        <Route path='/daily'>
+                            <NavigationBar/>
+                            <DailyWeather weather={this.state.weather}/>
+                        </Route>
 
-            <div>
+                        <Route path="/hourly">
+                            <NavigationBar/>
+                            <HourlyWeather weather={this.state.weather}/>
+                        </Route>
+                        
+                    </Switch>
+                </Router>
+            )
+        }else{
+            return ( 
                 <NavigationBar />
-                <DailyWeather weather={this.state.weather}/>
-            </div>
-        )
+            )
+        }
     }
 }
 

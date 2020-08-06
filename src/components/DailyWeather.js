@@ -9,21 +9,20 @@ class DailyWeather extends React.Component{
         return(
             <WeatherCard 
             daysAfter = {dayNumber}
-            date = {this.props.weather? date:null}
-            icon = {this.props.weather? this.props.weather.daily[dayNumber].weather[0].icon:null}
+            date = {date}
+            icon = {this.props.weather.daily[dayNumber].weather[0].icon}
             dayOfWeek={date.getDay()+dayNumber} 
-            morningTemperature={this.props.weather? Math.round(this.props.weather.daily[dayNumber].temp.morn):null}
-            dayTemperature={this.props.weather? Math.round(this.props.weather.daily[dayNumber].temp.day):null}
-            eveningTemperature={this.props.weather? Math.round(this.props.weather.daily[dayNumber].temp.eve):null}
-            nightTemperature={this.props.weather? Math.round(this.props.weather.daily[dayNumber].temp.night):null}
-            status={this.props.weather? this.props.weather.daily[dayNumber].weather[0].description:null} />
+            morningTemperature={Math.round(this.props.weather.daily[dayNumber].temp.morn)}
+            dayTemperature={Math.round(this.props.weather.daily[dayNumber].temp.day)}
+            eveningTemperature={Math.round(this.props.weather.daily[dayNumber].temp.eve)}
+            nightTemperature={Math.round(this.props.weather.daily[dayNumber].temp.night)}
+            status={this.props.weather.daily[dayNumber].weather[0].description} />
         )
     }
 
     render(){
         return(
             <div className="container-fluid">
-
                 <div className="row">
 
                     <div className="col-sm">
