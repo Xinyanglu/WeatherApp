@@ -5,6 +5,7 @@ import axios from 'axios'
 import HourlyWeather from './components/HourlyWeather'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import HomePage from './components/HomePage'
+import CurrentWeather from './components/CurrentWeather'
 
 
 class App extends React.Component{
@@ -51,6 +52,11 @@ class App extends React.Component{
                         <Route path="/hourly">
                             <NavigationBar/>
                             <HourlyWeather weather={this.state.weather}/>
+                        </Route>
+
+                        <Route path="/current">
+                            <NavigationBar/>
+                            <CurrentWeather weather={this.state.weather}/>
                         </Route>
 
                         <Route path="/">

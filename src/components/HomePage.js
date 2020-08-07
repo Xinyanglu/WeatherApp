@@ -13,6 +13,10 @@ function HomePage(){
         history.push("/hourly")
     }
 
+    function handleCurrentWeather(){
+        history.push("/current")
+    }
+
     return (
         <div className="d-flex align-items-center min-vh-100">
             <div className="container">
@@ -32,7 +36,7 @@ function HomePage(){
                     </div>
 
                     <div className="col-lg">
-                        <button type="button" className="btn btn-primary btn-lg">
+                        <button type="button" className="btn btn-primary btn-lg" onClick={handleCurrentWeather}>
                             See Current Weather
                         </button>
                     </div>
