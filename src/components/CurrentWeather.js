@@ -1,6 +1,7 @@
 import React from 'react'
 import "./CurrentWeather.css"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Clock from './Clock'
 
 function CurrentWeather(props){
 
@@ -24,15 +25,15 @@ function CurrentWeather(props){
                 <div className="col-xl-2">
                     <h1>{numberToDayOfWeek(date.getDay())}</h1>
                     <h2>{numberToMonth(date.getMonth()) + " " + date.getDate()}</h2>
-                    <img src={icon}/>
+                    <img src={icon} alt="current status"/>
                 </div>
 
                 <div className="col-xl-2 info">
+                    <Clock />
                     <h3>Temperature: {Math.round(props.weather.current.temp) + " °C"}</h3>
                     <h3>Feels like: {Math.round(props.weather.current.feels_like) + " °C"}</h3>
                     <h3>Humidity: {props.weather.current.humidity}%</h3>
                     <h2>{props.weather.current.weather[0].description}</h2>
-
 
                 </div>
                 

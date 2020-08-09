@@ -18,35 +18,34 @@ function HomePage(){
     }
 
     return (
-        <div className="d-flex align-items-center min-vh-100">
-            <div className="container">
+        <div className="container-fluid vh-100">
+            <h1 className="d-flex justify-content-center h-25 align-items-end mb-0">Weather app</h1>
+            <div className="row d-flex justify-content-center h-75">
 
-                <div className="row  text-center">
-                    
-                    <div className="col-lg">
-                        <button type="button" className="btn btn-primary btn-lg" onClick={handleDailyWeather}>
-                            See Daily Weather
-                        </button>
-                    </div>
+                <div className="col-sm-2 d-flex flex-column align-self-center">
+                    <button type="button" className="btn btn-primary btn-lg" onClick={handleDailyWeather}>
+                        See Daily Weather
+                    </button>
+                </div>
 
-                    <div className="col-lg">
-                        <button type="button" className="btn btn-primary btn-lg" onClick={handleHourlyWeather}>
-                            See Hourly Weather
-                        </button>
-                    </div>
+                
+                <div className="col-sm-2 d-flex flex-column align-self-center">
+                    <button type="button" className="btn btn-primary btn-lg" onClick={handleHourlyWeather}>
+                        See Hourly Weather
+                    </button>
+                </div>
+            
 
-                    <div className="col-lg">
-                        <button type="button" className="btn btn-primary btn-lg" onClick={handleCurrentWeather}>
-                            See Current Weather
-                        </button>
-                    </div>
+                <div className="col-sm-2 d-flex flex-column align-self-center">
+                    <button type="button" className="btn btn-primary btn-lg" onClick={handleCurrentWeather}>
+                        See Current Weather
+                    </button>
 
                 </div>
 
             </div>
 
         </div>
-
     )
 }
 
