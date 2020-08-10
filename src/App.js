@@ -6,6 +6,7 @@ import HourlyWeather from './components/HourlyWeather'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import HomePage from './components/HomePage'
 import CurrentWeather from './components/CurrentWeather'
+import config from './config.js'
 
 
 class App extends React.Component{
@@ -14,7 +15,7 @@ class App extends React.Component{
         super(props)
         this.state={
             weather: null,
-            id: '3e6d983769f060da2be494417af4268c'
+            id: config.WEATHER_API
         }
     }
 
