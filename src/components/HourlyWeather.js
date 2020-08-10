@@ -29,7 +29,7 @@ class HourlyWeather extends React.Component{
         for (let i=0;i<12;i++){
             if (today.getHours() + i === 24){
                 hourData.push(
-                    <div className="h3">{this.numberToMonth(tomorrow.getMonth()) + " " + tomorrow.getDate()}</div>
+                    <div className="h3" key={'date'}>{this.numberToMonth(tomorrow.getMonth()) + " " + tomorrow.getDate()}</div>
                     
                     )
             }
