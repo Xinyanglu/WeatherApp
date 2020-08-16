@@ -5,7 +5,7 @@ class Clock extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            time: new Date()
+            time: new Date(new Date().getTime() + this.props.offset*1000)
         }
     }
 
@@ -32,14 +32,14 @@ class Clock extends React.Component{
     }
 
     render(){
-        return(
-        <h3>{this.setTime(this.state.time.getHours(),this.state.time.getMinutes(),this.state.time.getSeconds())}</h3>
+        return( 
+        <h3>{this.setTime(this.state.time.getUTCHours(),this.state.time.getUTCMinutes(),this.state.time.getUTCSeconds())}</h3>
         )
     }
 
     tick(){
         this.setState({
-            time: new Date()
+            time: new Date(this.state.time.getTime()+1000)
         })
     }
 

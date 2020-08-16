@@ -29,7 +29,7 @@ function CurrentWeather(props){
                 </div>
 
                 <div className="col-xl-2 info">
-                    <Clock />
+                    <Clock offset={props.weather.timezone_offset}/>
                     <h3>Temperature: {Math.round(props.weather.current.temp) + " °C"}</h3>
                     <h3>Feels like: {Math.round(props.weather.current.feels_like) + " °C"}</h3>
                     <h3>Humidity: {props.weather.current.humidity}%</h3>
