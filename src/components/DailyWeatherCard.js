@@ -6,13 +6,13 @@ function WeatherCard(props){
     let date = props.date
 
     if (date){
-        date.setDate(date.getDate()+props.daysAfter)
+        date.setDate(date.getUTCDate()+props.daysAfter)
     }
 
     return (
         <div className="weather-card">
-            <h1 className="date">{`${numberToMonth(date.getMonth())} ${date.getDate()}`}</h1>
-            <h3 className="day-of-week">{numberToDayOfWeek(date.getDay())}</h3>
+            <h1 className="date">{`${numberToMonth(date.getUTCMonth())} ${date.getUTCDate()}`}</h1>
+            <h3 className="day-of-week">{numberToDayOfWeek(date.getUTCDay())}</h3>
             <p className="temperature">Morning: {props.morningTemperature} °C</p>
             <p className="temperature">Day: {props.dayTemperature} °C</p>
             <p className="temperature">Evening: {props.eveningTemperature} °C</p>

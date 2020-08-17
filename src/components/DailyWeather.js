@@ -5,7 +5,7 @@ import WeatherCard from './DailyWeatherCard.js'
 class DailyWeather extends React.Component{
 
     renderWeatherCard(dayNumber){
-        let date = new Date()
+        let date = new Date((this.props.weather.current.dt + this.props.weather.timezone_offset)*1000)
         return(
             <WeatherCard 
             daysAfter = {dayNumber}

@@ -87,6 +87,7 @@ class App extends React.Component {
         console.log("render")
         if (this.state.weather && this.state.locationData) {
             console.log(this.state.weather)
+            console.log(this.state.locationData)
             return (
                 <Router>
                     <Switch>
