@@ -52,6 +52,9 @@ class App extends React.Component {
     getDataWithAddress(address) {
         let url = `http://open.mapquestapi.com/geocoding/v1/address?key=${this.state.mapkey}&location=${address}`
         axios.get(url).then((response) => {
+            if (response.data.results[0].locations[0].adminArea5 === ""){
+                return null
+            }
             this.setState({
                 locationData: response.data,
                 lat: response.data.results[0].locations[0].latLng.lat,

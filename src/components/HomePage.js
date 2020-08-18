@@ -22,9 +22,11 @@ function HomePage(props){
         <div className="container-fluid vh-100">
             <div className="row d-flex justify-content-center h-50">
                 
-                <div className=" justify-content-center align-self-center"> 
-                    <h1>Weather app</h1>
-                    <LocationChanger changeDataFunction={props.changeDataFunction} />
+                <div className="  align-self-center"> 
+                    <h1 className="mb-4 text-center">Weather app</h1>
+                    <div className="">
+                        <LocationChanger changeDataFunction={props.changeDataFunction} />
+                    </div>
                 </div>
             </div>
             <div className="row d-flex justify-content-center h-50">
