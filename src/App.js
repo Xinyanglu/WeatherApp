@@ -8,12 +8,11 @@ import HomePage from './components/HomePage'
 import CurrentWeather from './components/CurrentWeather'
 import config from './config.js'
 import Location from './components/Location'
-import LocationChanger from './components/LocationChanger'
+
 
 class App extends React.Component {
 
     constructor(props) {
-        console.log("construct")
         super(props)
         this.state = {
             weather: null,
@@ -28,7 +27,6 @@ class App extends React.Component {
     }
 
     getDataWithCoords(lat, long) {
-        console.log("coords")
         let api = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&units=metric&appid=${this.state.weatherid}`
         axios.get(api).then((response) => {
             this.setState({
@@ -52,7 +50,6 @@ class App extends React.Component {
     }
 
     getDataWithAddress(address) {
-        console.log("address")
         let url = `http://open.mapquestapi.com/geocoding/v1/address?key=${this.state.mapkey}&location=${address}`
         axios.get(url).then((response) => {
             this.setState({
@@ -73,7 +70,6 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log("mount")
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition((position) => {
                 if (position.coords.latitude && position.coords.longitude) {
@@ -84,7 +80,6 @@ class App extends React.Component {
     }
 
     render() {
-        console.log("render")
         if (this.state.weather && this.state.locationData) {
             console.log(this.state.weather)
             console.log(this.state.locationData)
@@ -125,8 +120,8 @@ class App extends React.Component {
                         </Route>
 
                         <Route path="/">
-                            <LocationChanger changeDataFunction={this.getDataWithAddress} />
-                            <HomePage />
+                            
+                            <HomePage changeDataFunction={this.getDataWithAddress}/>
                         </Route>
 
                     </Switch>

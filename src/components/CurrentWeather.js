@@ -16,15 +16,15 @@ function CurrentWeather(props){
     }
 
 
-    let date = new Date()
+    let date = new Date(new Date().getTime() + props.weather.timezone_offset*1000)
     let icon = `http://openweathermap.org/img/wn/${props.weather.current.weather[0].icon}@2x.png`
 
     return(
         <div className="container-fluid">
             <div className="row justify-content-center current-weather">
                 <div className="col-xl-2">
-                    <h1>{numberToDayOfWeek(date.getDay())}</h1>
-                    <h2>{numberToMonth(date.getMonth()) + " " + date.getDate()}</h2>
+                    <h1>{numberToDayOfWeek(date.getUTCDay())}</h1>
+                    <h2>{numberToMonth(date.getUTCMonth()) + " " + date.getUTCDate()}</h2>
                     <img src={icon} alt="current status"/>
                 </div>
 
