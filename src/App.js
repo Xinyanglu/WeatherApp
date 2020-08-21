@@ -35,7 +35,7 @@ class App extends React.Component {
                 long: long,
             })
             if (this.state.lat && this.state.long) {
-                let url = `http://open.mapquestapi.com/geocoding/v1/reverse?key=${this.state.mapkey}&location=${this.state.lat},${this.state.long}&includeRoadMetadata=true&includeNearestIntersection=true`
+                let url = `https://open.mapquestapi.com/geocoding/v1/reverse?key=${this.state.mapkey}&location=${this.state.lat},${this.state.long}&includeRoadMetadata=true&includeNearestIntersection=true`
                 axios.get(url).then((response) => {
                     this.setState({
                         locationData: response.data,
@@ -50,7 +50,7 @@ class App extends React.Component {
     }
 
     getDataWithAddress(address) {
-        let url = `http://open.mapquestapi.com/geocoding/v1/address?key=${this.state.mapkey}&location=${address}`
+        let url = `https://open.mapquestapi.com/geocoding/v1/address?key=${this.state.mapkey}&location=${address}`
         axios.get(url).then((response) => {
             if (response.data.results[0].locations[0].adminArea5 === ""){
                 return null
