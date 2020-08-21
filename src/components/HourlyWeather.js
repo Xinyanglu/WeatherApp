@@ -1,7 +1,9 @@
 import React from 'react'
 import HourlyWeatherCard from './HourlyWeatherCard'
 
+
 class HourlyWeather extends React.Component{
+    
     renderHourlyWeatherCard(hourNumber){
         if (this.props){
             return(
@@ -40,10 +42,11 @@ class HourlyWeather extends React.Component{
     
 
     render(){
+        let today = new Date((this.props.weather.current.dt + this.props.weather.timezone_offset)*1000)
         return(
             <div>
                 <div className="h3">
-                    {this.numberToMonth(new Date().getMonth()) + " " + new Date().getDate()}
+                    {this.numberToMonth(today.getUTCMonth()) + " " + today.getUTCDate()}
                 </div>
 
                 <div className='hourly-weather'>
