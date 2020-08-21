@@ -11,7 +11,10 @@ function HourlyWeatherCard(props){
 }
 
 function hourToTwelveHourTime(hour){
-    if (hour>12){
+    if (hour === 12){
+        return(12+"pm")
+    }
+    else if (hour>11){
         return((hour-12)+"pm")
     }
     return(hour+"am")

@@ -23,13 +23,13 @@ class HourlyWeather extends React.Component{
     listOfHours(){
         let today = new Date((this.props.weather.current.dt + this.props.weather.timezone_offset)*1000)
         let tomorrow = new Date()
-        tomorrow.setDate(today.getDate()+1)
+        tomorrow.setUTCDate(today.getUTCDate()+1)
 
         let hourData = []
         for (let i=0;i<12;i++){
             if (today.getUTCHours() + i === 24){
                 hourData.push(
-                    <div className="h3" key={'date'}>{this.numberToMonth(tomorrow.getMonth()) + " " + tomorrow.getDate()}</div>
+                    <div className="h3" key={'date'}>{this.numberToMonth(tomorrow.getUTCMonth()) + " " + tomorrow.getUTCDate()}</div>
                     
                     )
             }

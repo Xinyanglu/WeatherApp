@@ -6,7 +6,7 @@ function WeatherCard(props){
     let date = props.date
 
     if (date){
-        date.setDate(date.getUTCDate()+props.daysAfter)
+        date.setUTCDate(date.getUTCDate()+props.daysAfter)
     }
 
     return (
